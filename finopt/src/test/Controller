@@ -1,0 +1,29 @@
+package com.example.financeai.controller;
+
+import com.example.financeai.dto.ExplainRequest;
+import com.example.financeai.dto.ExplainResponse;
+import com.example.financeai.service.FinanceAiService;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/ai")
+@RequiredArgsConstructor
+public class FinanceAiController {
+
+    private final FinanceAiService financeAiService;
+
+    @PostMapping("/explain")
+    public ResponseEntity<ExplainResponse> explainDecision(
+            @RequestBody ExplainRequest request
+    ) {
+
+        ExplainResponse response =
+                financeAiService.generateExplanation(request);
+
+        return ResponseEntity.ok(response);
+    }
+}
