@@ -1,0 +1,10 @@
+package com.example.financeai.dto;
+
+public record ExplainResponse(
+
+        String recommendation,
+        Double estimatedSavings,
+        String strategy
+
+) {
+}
