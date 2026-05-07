@@ -1,0 +1,183 @@
+ Finance AI 
+
+Descrição
+
+O Finance AI Women é uma API REST desenvolvida com Spring Boot que tem como objetivo auxiliar mulheres na tomada de decisões financeiras inteligentes com base em orçamento mensal.
+
+A aplicação simula uma Inteligência Artificial financeira simples capaz de:
+
+- analisar orçamento;
+- sugerir cortes de gastos;
+- recomendar prioridades financeiras;
+- incentivar autonomia financeira feminina;
+- apoiar mulheres em transição de carreira e independência financeira.
+
+O sistema utiliza um endpoint REST chamado `/ai/explain`, responsável por receber dados financeiros e retornar recomendações automáticas simulando uma IA financeira.
+
+
+ Objetivo
+
+Criar uma API funcional que recomenda decisões financeiras com base em orçamento.
+
+
+ Funcionalidades
+
+- Endpoint REST `/ai/explain`
+- Simulação de IA financeira
+- Análise de orçamento mensal
+- Sugestão de economia
+- Estratégias financeiras
+- Incentivo à independência financeira feminina
+
+---
+
+Tecnologias utilizadas
+
+- Java 21
+- Spring Boot
+- Spring Web
+- Lombok
+- Maven
+
+
+
+ Endpoint Principal
+
+POST `/ai/explain`
+
+---
+Requisição
+
+```json
+{
+  "monthlyBudget": 4500,
+  "expensesToCut": [
+    "Streaming",
+    "Delivery"
+  ],
+  "investmentPriorities": [
+    "Reserva de emergência",
+    "Cursos de tecnologia"
+  ],
+  "financialGoal": "Transição de carreira"
+}
+
+{
+  "recommendation": "IA Financeira Feminina: Identificamos oportunidades para fortalecer sua autonomia financeira.",
+  "estimatedSavings": 400.0,
+  "strategy": "Priorizar investimentos e reduzir gastos impulsivos."
+}
+
+
+---
+
+ Principal da API
+
+Controller
+
+java id="7ld8cx
+package com.example.financeai.controller;
+
+import com.example.financeai.dto.ExplainRequest;
+import com.example.financeai.dto.ExplainResponse;
+import com.example.financeai.service.FinanceAiService;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/ai")
+@RequiredArgsConstructor
+public class FinanceAiController {
+
+    private final FinanceAiService financeAiService;
+
+    @PostMapping("/explain")
+    public ResponseEntity<ExplainResponse> explainDecision(
+            @RequestBody ExplainRequest request
+    ) {
+
+        ExplainResponse response =
+                financeAiService.generateExplanation(request);
+
+        return ResponseEntity.ok(response);
+    }
+}
+
+Service
+package com.example.financeai.service;
+
+import com.example.financeai.dto.ExplainRequest;
+import com.example.financeai.dto.ExplainResponse;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class FinanceAiService {
+
+    public ExplainResponse generateExplanation(ExplainRequest request) {
+
+        double estimatedSavings =
+                request.expensesToCut().size() * 200.0;
+
+        String recommendation = """
+                IA Financeira Feminina:
+
+                Detectamos oportunidades para melhorar sua
+                autonomia financeira e acelerar seus objetivos.
+
+                Objetivo:
+                """ + request.financialGoal();
+
+        String strategy = """
+                Estratégia recomendada:
+
+                - Reduzir gastos desnecessários
+                - Criar reserva de emergência
+                - Investir em capacitação profissional
+                - Desenvolver independência financeira
+                """;
+
+        return new ExplainResponse(
+                recommendation,
+                estimatedSavings,
+                strategy
+        );
+    }
+}
+
+
+Request DTO
+package com.example.financeai.dto;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+public record ExplainRequest(
+
+        BigDecimal monthlyBudget,
+
+        List<String> expensesToCut,
+
+        List<String> investmentPriorities,
+
+        String financialGoal
+
+) {
+}
+
+
+Response
+
+package com.example.financeai.dto;
+
+public record ExplainResponse(
+
+        String recommendation,
+        Double estimatedSavings,
+        String strategy
+
+) {
+}
