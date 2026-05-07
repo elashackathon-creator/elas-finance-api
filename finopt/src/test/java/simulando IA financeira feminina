@@ -1,0 +1,42 @@
+package com.example.financeai.service;
+
+import com.example.financeai.dto.ExplainRequest;
+import com.example.financeai.dto.ExplainResponse;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class FinanceAiService {
+
+    public ExplainResponse generateExplanation(ExplainRequest request) {
+
+        double estimatedSavings =
+                request.expensesToCut().size() * 200.0;
+
+        String recommendation = """
+                IA Financeira Feminina:
+                
+                Identificamos oportunidades para fortalecer sua autonomia financeira.
+                
+                Reduzir gastos não essenciais pode aumentar sua segurança financeira
+                e acelerar seus objetivos pessoais e profissionais.
+                
+                Objetivo informado:
+                """ + request.financialGoal();
+
+        String strategy = """
+                Estratégia recomendada:
+                
+                • Priorizar reserva de emergência
+                • Investir em desenvolvimento profissional
+                • Reduzir gastos impulsivos
+                • Construir independência financeira sustentável
+                """;
+
+        return new ExplainResponse(
+                recommendation,
+                estimatedSavings,
+                strategy
+        );
+    }
+}
