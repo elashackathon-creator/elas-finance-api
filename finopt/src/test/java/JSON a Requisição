@@ -1,0 +1,14 @@
+{
+  "monthlyBudget": 4500,
+  "expensesToCut": [
+    "Streaming",
+    "Delivery",
+    "Compras impulsivas"
+  ],
+  "investmentPriorities": [
+    "Reserva de emergência",
+    "Cursos de tecnologia",
+    "Tesouro Direto"
+  ],
+  "financialGoal": "Transição de carreira para tecnologia"
+}
