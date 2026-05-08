@@ -19,16 +19,16 @@ O sistema recebe as opções financeiras da usuária, analisa dentro do orçamen
 
 ## Tecnologias
 
-| Camada | Tecnologia | Versão |
-|---|---|---|
+| Camada | Tecnologia | Versão   |
+|---|---|----------|
 | Linguagem | Java | 21 (LTS) |
-| Framework | Spring Boot | 3.5 |
-| Segurança | Spring Security + JWT (jjwt) | 0.12.6 |
-| Persistência | Spring Data JPA + H2 | — |
-| IA Generativa | Groq API (llama-3.3-70b-versatile) | — |
-| Documentação | SpringDoc OpenAPI / Swagger UI | 2.8.3 |
-| Utilitários | Lombok | — |
-| Testes | JUnit 5 + Mockito | — |
+| Framework | Spring Boot | 3.5      |
+| Segurança | Spring Security + JWT (jjwt) | 0.12.6   |
+| Persistência | Spring Data JPA + H2 | —        |
+| IA Generativa | Groq API (llama-3.3-70b-versatile) | —        |
+| Documentação | SpringDoc OpenAPI / Swagger UI | 2.8.3    |
+| Utilitários | Lombok | —        |
+| Testes | JUnit 5 + Mockito | —        |
 
 **Recursos do Java 21 utilizados:**
 - `record` — DTOs e objetos de domínio imutáveis

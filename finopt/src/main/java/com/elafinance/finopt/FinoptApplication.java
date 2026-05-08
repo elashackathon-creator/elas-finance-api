@@ -10,11 +10,11 @@ public class FinoptApplication {
         SpringApplication.run(FinoptApplication.class, args);
 
         String boasVindas = """
-                **********************************************
-                * ELAFINANCE API INICIALIZADA         *
-                * Foco: Autonomia Financeira          *
-                * Tecnologia: Java 21 & Spring 3.3    *
-                **********************************************
+               **********************************************
+                *      ELAFINANCE API INICIALIZADA         *
+                *      Foco: Autonomia Financeira          *
+                *      Tecnologia: Java 21 & Spring 3.5    *
+               **********************************************
                 """;
         System.out.println(boasVindas);
     }
