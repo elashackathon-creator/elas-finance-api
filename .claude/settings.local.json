@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\jessi\\\\Downloads\\\\finopt\" -Recurse -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(del /f \"domain\\\\OpcaoFinanceira.java\" \"domain\\\\Investimento.java\" \"domain\\\\CorteDeGasto.java\" \"controller\\\\IAControle.java\" \"controller\\\\RecomendacaoControle.java\" \"usecase\\\\EstrategiaOtimizacao.java\" \"usecase\\\\EstrategiaOtimizacaoSimples.java\" \"config\\\\SegurancaConfig.java\")",
+      "Bash(del /f \"dto\\\\RequisicaoOtimizacao.java\")",
+      "Bash(git archive *)",
+      "Bash(powershell *)",
+      "Bash(git add *)"
+    ]
+  }
+}

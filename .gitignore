@@ -1,0 +1,52 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Compilados Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Logs
+*.log
+logs/
+
+# Banco de dados H2 local
+*.db
+*.mv.db
+*.trace.db
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+application-local.properties
+application-prod.properties
+secrets.properties
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporários
+*.tmp
+*.bak
+*.swp
+*~
+
+# Spring Boot devtools
+.spring-boot-devtools.properties
