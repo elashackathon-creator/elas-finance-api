@@ -15,7 +15,7 @@ public class FinoptApplication {
                 *      Foco: Autonomia Financeira          *
                 *      Tecnologia: Java 21 & Spring 3.5    *
                **********************************************
-                """;
+               """;
         System.out.println(boasVindas);
     }
 }
