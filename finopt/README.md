@@ -114,8 +114,9 @@ Authorization: Bearer <token>
 ## Exemplos de uso
 
 ### 1. Registrar
+
+**Requisição** `POST /auth/registrar`
 ```json
-POST /auth/registrar
 {
   "nome": "Jessica",
   "email": "jessica@email.com",
@@ -124,32 +125,36 @@ POST /auth/registrar
 ```
 
 ### 2. Login
+
+**Requisição** `POST /auth/login`
 ```json
-POST /auth/login
 {
   "email": "jessica@email.com",
   "senha": "minhasenha"
 }
+```
 
-// Resposta
+**Resposta**
+```json
 { "token": "eyJhbGciOiJIUzI1NiJ9..." }
 ```
 
 ### 3. Otimizar carteira
-```json
-POST /otimizar
-Authorization: Bearer eyJ...
 
+**Requisição** `POST /otimizar` — header `Authorization: Bearer <token>`
+```json
 {
   "orcamento": 800,
   "opcoes": [
     { "nome": "Curso de Tecnologia", "custo": 400, "retornoEsperado": 600, "categoria": "EDUCACAO" },
     { "nome": "Streaming",           "custo": 45,  "retornoEsperado": 30,  "categoria": "LAZER" },
-    { "nome": "Viagem",              "custo": 3000,"retornoEsperado": 500, "categoria": "LAZER" }
+    { "nome": "Viagem",              "custo": 3000, "retornoEsperado": 500, "categoria": "LAZER" }
   ]
 }
+```
 
-// Resposta
+**Resposta**
+```json
 {
   "mensagem": "Plano financeiro otimizado com sucesso.",
   "custoTotal": 445.0,
@@ -173,13 +178,14 @@ Authorization: Bearer eyJ...
 ```
 
 ### 4. Perguntar para a IA
+
+**Requisição** `POST /ia/explicar` — header `Authorization: Bearer <token>`
 ```json
-POST /ia/explicar
-Authorization: Bearer eyJ...
-
 { "mensagem": "Como começar a investir com pouco dinheiro?" }
+```
 
-// Resposta
+**Resposta**
+```json
 {
   "status": "sucesso",
   "analise": "Começar a investir com pouco dinheiro é totalmente possível! ..."
