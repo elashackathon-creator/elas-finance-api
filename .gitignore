@@ -35,12 +35,18 @@ logs/
 .env.*
 application-local.properties
 application-prod.properties
+application-secret.properties
 secrets.properties
+*.key
+*.pem
+*.p12
+*.jks
 
 # Sistema operacional
 .DS_Store
 Thumbs.db
 desktop.ini
+ehthumbs.db
 
 # Temporários
 *.tmp
@@ -50,3 +56,9 @@ desktop.ini
 
 # Spring Boot devtools
 .spring-boot-devtools.properties
+
+# Snapshots e dumps de memória
+*.hprof
+hs_err_pid*
+replay_pid*
+
